@@ -1,2 +1,2 @@
 # Dimuthu
-This is Dimuthu's website
+Learn more about Dimuthu here!!!
