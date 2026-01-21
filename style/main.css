@@ -7,8 +7,10 @@ html, body {
     color: #000;
 }
 
-body {
+.page-border {
+    margin: 1rem;
     padding: 1rem;
+    border: 1px solid #fff; /* just spacing around page */
 }
 
 h1 {
@@ -93,15 +95,6 @@ a:hover {
     padding: 0 1rem 1rem 1rem;
     color: #333;
     font-size: 14px;
-}
-
-.flourish-card {
-    background: #000; /* black card for Flourish thumbnail */
-    color: #fff;
-}
-
-.flourish-card h3 {
-    color: #fff;
 }
 
 .viz-card h3 {
