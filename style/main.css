@@ -1,3 +1,6 @@
+/* -------------------------
+   GLOBAL
+------------------------- */
 html {
     margin: 0;
     padding: 0;
@@ -5,108 +8,168 @@ html {
 
 body {
     font-family: 'Source Code Pro', monospace;
-    margin: 2rem auto;
-    max-width: 1100px;
+    margin: 1.5rem;
+    padding: 1.5rem;
+    font-size: 18px;
     color: #111;
-    line-height: 1.6;
-    font-size: 17px;
+    background-color: #fff;
 }
 
-/* HEADINGS */
-
+/* -------------------------
+   HEADINGS
+------------------------- */
 h1 {
-    font-size: 2.4rem;
+    color: #6b2fb3;
     margin-bottom: 0.25rem;
 }
 
 h2 {
-    font-size: 1.2rem;
-    margin-top: 4rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-size: 20px;
+    margin-bottom: 1.25rem;
 }
 
-h2 i {
-    color: #6b4ba6;
-    margin-right: 0.5rem;
+h3 {
+    font-size: 17px;
+    line-height: 1.35;
+    margin: 0.5rem 0 0.25rem;
 }
 
-/* HEADER */
-
-#sub {
-    margin-left: 1.5rem;
-}
-
-.socials-left {
-    border-left: 2px solid #6b4ba6;
-    padding-left: 1rem;
-}
-
-.role {
-    font-weight: bold;
-}
-
-/* LINKS */
-
+/* -------------------------
+   LINKS
+------------------------- */
 a {
-    color: #6b4ba6;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+a:link {
+    color: #6b2fb3;
 }
 
-/* INTRO / WHO AM I */
+a:visited {
+    color: #3c2268;
+}
 
+a:hover {
+    color: #9d7bcf;
+}
+
+/* -------------------------
+   SOCIALS (LEFT-INDENTED)
+------------------------- */
+.socials-left {
+    margin-left: 0.5rem;
+}
+
+.socials-left i {
+    margin-right: 0.4rem;
+}
+
+/* -------------------------
+   SECTIONS
+------------------------- */
+section {
+    margin-top: 4rem;
+}
+
+/* -------------------------
+   WHO AM I (DOCUMENTARY STYLE)
+------------------------- */
 .intro-editorial {
     display: flex;
     align-items: flex-start;
     gap: 2.5rem;
-    margin-top: 2rem;
+    max-width: 900px;
 }
-
-/* PHOTO — documentary feel */
 
 .portrait img {
     width: 240px;
     height: auto;
-    filter: grayscale(10%) contrast(90%);
+
+    /* Documentary feel */
+    filter: grayscale(5%) contrast(95%);
+    box-shadow: none;
     border-radius: 2px;
-    opacity: 0.95;
 }
 
-/* subtle grain effect */
+/* Slight imperfection */
 .portrait img {
     image-rendering: auto;
 }
 
-/* TEXT */
-
-.intro-text {
-    max-width: 700px;
+/* -------------------------
+   GRID (REPORTING + VIZ)
+------------------------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 }
 
-.intro-text p {
-    margin-bottom: 1.2rem;
+/* -------------------------
+   CARD BASE
+------------------------- */
+.card {
+    display: block;
+    color: inherit;
 }
 
-/* FOOTER */
+/* -------------------------
+   LINKEDIN-STYLE REPORTING
+------------------------- */
+.card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 
+    /* No glossy look */
+    box-shadow: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+/* Hover — Rosmery-style */
+.card:hover img {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+/* -------------------------
+   VISUALIZATION CARDS
+------------------------- */
+.viz-card img {
+    aspect-ratio: 4 / 3;
+}
+
+/* -------------------------
+   FOOTER
+------------------------- */
 footer {
     margin-top: 5rem;
-    font-size: 0.9rem;
-    color: #555;
+    font-size: 14px;
+    text-align: center;
+    color: #666;
 }
 
-/* RESPONSIVE */
+/* -------------------------
+   RESPONSIVE
+------------------------- */
+@media (max-width: 768px) {
 
-@media (max-width: 800px) {
     .intro-editorial {
         flex-direction: column;
     }
 
     .portrait img {
         width: 200px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
     }
 }
