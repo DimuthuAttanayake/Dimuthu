@@ -1,7 +1,7 @@
 /* ===================== GENERAL ===================== */
 html, body {
     margin: 0;
-    padding: 2rem; /* soft spacing around page */
+    padding: 2rem; /* soft page spacing */
     font-family: 'Source Code Pro', monospace;
     font-size: 18px;
     background: #fff;
@@ -99,11 +99,7 @@ a:hover {
 
 /* ===================== VISUALIZATION CARDS ===================== */
 .viz-card {
-    width: 100%;
-    max-width: 700px; /* large enough to show full chart */
-    margin: 0 auto;
-    background: #fff;
-    padding: 0;
+    max-width: 700px;
 }
 
 .viz-card .flourish-embed {
