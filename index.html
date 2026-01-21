@@ -5,41 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dimuthu Attanayake</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Styles -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style/main.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
-<h1>Dimuthu Attanayake</h1>
+<header>
+    <h1>Dimuthu Attanayake</h1>
 
-<div id="sub">
-    <p>Data Journalist</p>
-    <p>
-        <i class="fab fa-twitter"></i>
-        <a href="https://twitter.com/dimuthudca" target="_blank">@dimuthudca</a><br>
-        <i class="fab fa-github"></i>
-        <a href="https://github.com/DimuthuAttanayake" target="_blank">GitHub</a><br>
-        <i class="fas fa-envelope"></i>
-        <a href="mailto:dimuthuc.attanayake@gmail.com">Email</a>
-    </p>
-</div>
+    <div id="sub" class="socials-left">
+        <p>Data Journalist</p>
+        <p>
+            <i class="fab fa-twitter"></i>
+            <a href="https://twitter.com/dimuthudca" target="_blank">@dimuthudca</a><br>
 
-<!-- ABOUT -->
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/DimuthuAttanayake" target="_blank">DimuthuAttanayake</a><br>
+
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:dimuthuc.attanayake@gmail.com">dimuthuc.attanayake@gmail.com</a>
+        </p>
+    </div>
+</header>
+
+<!-- WHO AM I -->
 <section class="intro">
     <h2><i class="fas fa-chevron-right"></i> Who am I?</h2>
 
     <div class="intro-grid">
-        <img id="headshot" src="images/Dimuthu.jpg" alt="Dimuthu Attanayake">
+        <img
+            src="images/Dimuthu.jpg"
+            alt="Dimuthu Attanayake"
+            class="headshot-up">
 
+        <!-- TEXT UNCHANGED -->
         <div class="intro-text">
 
 <p>
@@ -80,85 +86,54 @@ BBC, and
 As a business advisor for an Australian government led programme, I have strategized value chain interventions and, as a tech researcher I have worked on developing AI tools for fact checking. I hold a BSc. (Hons) in Economics and Finance from the University of London.
 </p>
 
-</div>
-
+        </div>
     </div>
 </section>
 
-<!-- REPORTING (NOW FIRST) -->
+<!-- REPORTING -->
 <section>
     <h2><i class="fas fa-chevron-right"></i> Reporting</h2>
 
-    <div class="grid reporting-grid">
+    <div class="grid">
 
-        <!-- CARD -->
-        <a class="story-card"
-           href="https://www.context.news/climate-risks/domestic-violence-is-cost-of-climate-change-for-sri-lankan-women"
-           target="_blank">
-            <img src="images/context-gbv.jpg" alt="Climate change and gender-based violence">
-            <div class="story-meta">
-                <span class="outlet">Context / Reuters Foundation</span>
-                <h3>Climate change is driving domestic violence against Sri Lankan women</h3>
-            </div>
+        <a class="card" href="https://pulitzercenter.org/stories/sri-lanka-climate-change-traps-women-farmers-exploitative-cycle-economic-violence" target="_blank">
+            <img src="images/sri-lanka-climate.jpg" alt="">
+            <h3>In Sri Lanka, Climate Change Traps Women Farmers in ‘Exploitative’ Cycle of Economic Violence</h3>
+            <p>Pulitzer Center / Context News</p>
         </a>
 
-        <!-- CARD -->
-        <a class="story-card"
-           href="https://www.theguardian.com/environment/2023/sep/07/everything-is-destroyed-dynamite-use-sends-shockwaves-through-fishing-industries-sri-lanka"
-           target="_blank">
-            <img src="images/guardian-blast-fishing.jpg" alt="Blast fishing Sri Lanka">
-            <div class="story-meta">
-                <span class="outlet">The Guardian</span>
-                <h3>‘Everything is destroyed’: blast fishing devastates Sri Lanka’s coast</h3>
-            </div>
-        </a>
-
-        <!-- CARD -->
-        <a class="story-card"
-           href="https://asia.nikkei.com/spotlight/environment/plastic-spills-threaten-sri-lanka-and-india-as-asia-rules-polymer-trade"
-           target="_blank">
-            <img src="images/nikkei-plastic.jpg" alt="Plastic spill Sri Lanka">
-            <div class="story-meta">
-                <span class="outlet">Nikkei Asia</span>
-                <h3>Plastic spills threaten Sri Lanka and India</h3>
-            </div>
-        </a>
-
-        <!-- CARD -->
-        <a class="story-card"
-           href="https://foreignpolicy.com/2022/07/13/sri-lanka-food-economic-crisis-shortages-prices-inflation-women-children/"
-           target="_blank">
-            <img src="images/foreign-policy-crisis.jpg" alt="Sri Lanka economic crisis">
-            <div class="story-meta">
-                <span class="outlet">Foreign Policy</span>
-                <h3>Sri Lanka’s economic collapse is hitting women and children hardest</h3>
-            </div>
+        <a class="card" href="https://www.theguardian.com/environment/2023/sep/07/everything-is-destroyed-dynamite-use-sends-shockwaves-through-fishing-industries-sri-lanka" target="_blank">
+            <img src="images/guardian-blast-fishing.jpg" alt="">
+            <h3>‘Everything is destroyed’: dynamite use sends shockwaves through fishing industries</h3>
+            <p>The Guardian</p>
         </a>
 
     </div>
 </section>
 
-<!-- DATA VISUALIZATION (NOW SECOND) -->
+<!-- VISUALIZATION -->
 <section>
     <h2><i class="fas fa-chevron-right"></i> Data Visualization</h2>
 
     <div class="grid">
-        <div>
-            <h3>Polypropylene Trade via Panama Canal</h3>
+
+        <div class="card">
             <div class="flourish-embed flourish-sankey" data-src="visualisation/26812347"></div>
+            <h3>Polypropylene Polymer Trade via Panama Canal</h3>
         </div>
 
-        <div>
-            <h3>Coming Soon</h3>
-            <img src="images/placeholder.png" alt="Visualization preview">
+        <div class="card placeholder">
+            <img src="images/placeholder.png" alt="">
+            <h3>More visualizations coming soon</h3>
         </div>
+
     </div>
 </section>
 
 <script src="https://public.flourish.studio/resources/embed.js"></script>
 
 <footer>
-    &copy; 2026 Dimuthu Attanayake
+    © 2026 Dimuthu Attanayake
 </footer>
 
 </body>
