@@ -130,3 +130,42 @@ footer {
         justify-content: center;
     }
 }
+
+/* ---------- Interactive thumbnail behavior ---------- */
+
+.card {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    transition:
+        filter 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Hover state */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card:hover img {
+    filter: brightness(0.95) contrast(1.05);
+}
+
+/* Keyboard accessibility */
+.card:focus-visible {
+    outline: 2px solid rgba(0, 0, 0, 0.4);
+    outline-offset: 4px;
+}
