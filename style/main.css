@@ -1,19 +1,23 @@
 /* =====================
-   GLOBAL RESET
+   RESET
 ===================== */
 html, body {
     margin: 0;
     padding: 0;
 }
 
+/* =====================
+   GLOBAL
+===================== */
 body {
     font-family: 'Source Code Pro', monospace;
     font-size: 18px;
     line-height: 1.6;
     color: #111;
     max-width: 720px;
-    margin: 2rem auto;
+    margin: 2.5rem auto;
     padding: 0 1rem;
+    background: #fff;
 }
 
 /* =====================
@@ -21,21 +25,20 @@ body {
 ===================== */
 h1 {
     font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #000;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
 }
 
 h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.4rem;
+    font-weight: 600;
     margin-top: 3rem;
     margin-bottom: 1rem;
 }
 
 h3 {
-    font-size: 1.2rem;
-    font-weight: normal;
+    font-size: 1.05rem;
+    font-weight: 400;
     margin-bottom: 0.5rem;
 }
 
@@ -45,49 +48,83 @@ p {
 }
 
 /* =====================
-   LINKS
+   LINKS (Rosmery exact feel)
 ===================== */
 a {
-    color: #000;
+    color: #111;
     text-decoration: none;
-    border-bottom: 1px solid rgba(0,0,0,0.25);
-    transition: border-color 0.2s ease, color 0.2s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 a:hover {
-    color: #333;
-    border-color: #333;
+    border-bottom-color: rgba(0, 0, 0, 0.8);
 }
 
 /* =====================
-   ABOUT SECTION
+   HEADER / SUBTEXT
 ===================== */
-#about-me {
+#sub {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* =====================
+   INTRO SECTION (MATCHES ROSMERY)
+===================== */
+.intro {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 #headshot {
-    width: 180px;
+    width: 220px;
     height: auto;
-    border-radius: 50%;
-    margin-bottom: 1rem;
+    display: block;
+    margin: 1.5rem auto;
+}
+
+.intro-text {
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* =====================
-   FLOURISH EMBED
+   SECTIONS
 ===================== */
-.viz-embed {
-    margin-top: 2rem;
+section {
+    margin-top: 3rem;
+}
+
+/* =====================
+   TWO-COLUMN GRID
+   (Visualizations + Stories)
+===================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-top: 1.5rem;
+}
+
+/* =====================
+   IMAGES & EMBEDS
+===================== */
+.grid img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
 }
 
 .flourish-embed {
     width: 100%;
-    border: none !important;
+    min-height: 420px;
 }
 
 /* =====================
-   REPORTING LIST
+   REPORTING LIST (if needed)
 ===================== */
 #news ul {
     list-style: none;
@@ -99,17 +136,19 @@ a:hover {
 }
 
 /* =====================
-   GENERAL SPACING
+   FOOTER
 ===================== */
-section {
-    margin-top: 2rem;
-    padding-bottom: 0.5rem;
+footer {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
 }
 
 /* =====================
    RESPONSIVE
 ===================== */
-@media (max-width: 480px) {
+@media (max-width: 700px) {
     body {
         font-size: 17px;
     }
@@ -119,6 +158,10 @@ section {
     }
 
     h2 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
     }
 }
