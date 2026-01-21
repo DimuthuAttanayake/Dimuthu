@@ -1,7 +1,7 @@
-/* GENERAL */
+/* ===================== GENERAL ===================== */
 html, body {
     margin: 0;
-    padding: 2rem;  /* acts like a soft border / spacing around content */
+    padding: 2rem; /* soft spacing around page */
     font-family: 'Source Code Pro', monospace;
     font-size: 18px;
     background: #fff;
@@ -9,12 +9,23 @@ html, body {
     box-sizing: border-box;
 }
 
-/* HEADINGS */
-h1 { color: #804FB3; margin-bottom: 0.5rem; }
-h2 { font-size: 20px; color: #111; margin-top: 2rem; }
-h3 { font-size: 18px; color: #111; margin: 0.5rem 0; }
+/* ===================== HEADINGS ===================== */
+h1 {
+    color: #804FB3;
+    margin-bottom: 0.5rem;
+}
+h2 {
+    font-size: 20px;
+    color: #111;
+    margin-top: 2rem;
+}
+h3 {
+    font-size: 18px;
+    color: #111;
+    margin: 0.5rem 0;
+}
 
-/* HEADER/SOCIALS */
+/* ===================== HEADER/SOCIALS ===================== */
 .socials-left {
     text-align: left;
     margin-top: -1rem;
@@ -23,10 +34,15 @@ h3 { font-size: 18px; color: #111; margin: 0.5rem 0; }
     font-weight: bold;
     color: #111;
 }
-a { color: #804FB3; text-decoration: none; }
-a:hover { color: #bca6cf; }
+a {
+    color: #804FB3;
+    text-decoration: none;
+}
+a:hover {
+    color: #bca6cf;
+}
 
-/* WHO AM I */
+/* ===================== WHO AM I ===================== */
 .intro-editorial {
     display: flex;
     flex-wrap: wrap;
@@ -34,22 +50,29 @@ a:hover { color: #bca6cf; }
     gap: 2rem;
     margin-top: 1rem;
 }
+
 .portrait img {
     width: 250px;
     height: auto;
     filter: contrast(0.95) brightness(0.98);
-    border-radius: 3px;
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+    border-radius: 3px; /* soft edges */
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.1); /* subtle shadow */
 }
-.intro-text { flex: 1; }
 
-/* GRID SECTIONS */
+.intro-text {
+    flex: 1;
+    line-height: 1.6;
+}
+
+/* ===================== GRID SECTIONS ===================== */
 .grid {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     margin-top: 1rem;
 }
+
+/* ===================== CARDS ===================== */
 .card {
     background: #fff;
     border: none; /* no visible border */
@@ -58,13 +81,14 @@ a:hover { color: #bca6cf; }
     width: calc(50% - 1rem);
     box-sizing: border-box;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+    color: #111;
 }
 .card:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-/* CARD IMAGES */
 .card img {
     width: 100%;
     height: 200px;
@@ -73,26 +97,38 @@ a:hover { color: #bca6cf; }
     filter: contrast(0.95) brightness(0.98);
 }
 
-/* VISUALIZATIONS */
+/* ===================== VISUALIZATION CARDS ===================== */
 .viz-card {
-    padding: 0;
-    background: #fff;
-}
-.viz-card .flourish-embed {
     width: 100%;
-    height: 600px;
+    max-width: 700px; /* large enough to show full chart */
+    margin: 0 auto;
+    background: #fff;
+    padding: 0;
 }
 
-/* FOOTER */
+.viz-card .flourish-embed {
+    width: 100%;
+    height: 700px; /* full chart height */
+}
+
+/* ===================== FOOTER ===================== */
 footer {
     text-align: center;
     margin-top: 3rem;
     color: #111;
 }
 
-/* RESPONSIVE */
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 650px) {
-    .card, .viz-card { width: 100%; }
-    .intro-editorial { flex-direction: column; align-items: center; }
-    .portrait img { width: 200px; margin-bottom: 1rem; }
+    .card, .viz-card {
+        width: 100%;
+    }
+    .intro-editorial {
+        flex-direction: column;
+        align-items: center;
+    }
+    .portrait img {
+        width: 200px;
+        margin-bottom: 1rem;
+    }
 }
