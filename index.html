@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -7,16 +7,10 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Styles -->
     <link rel="stylesheet" href="style/main.css">
@@ -24,100 +18,82 @@
 
 <body>
 
+    <!-- HEADER -->
     <h1>Dimuthu Attanayake</h1>
 
     <div id="sub">
         <p>Data Journalist</p>
         <p>
             <i class="fab fa-twitter" aria-hidden="true"></i>
-            twitter:
-            <a href="https://twitter.com/dimuthudca" target="_blank">@dimuthudca</a>
+            twitter: <a href="https://twitter.com/dimuthudca" target="_blank">@dimuthudca</a>
             <br>
-
             <i class="fab fa-github" aria-hidden="true"></i>
-            github:
-            <a href="https://github.com/DimuthuAttanayake" target="_blank">
-                Dimuthu Attanayake
-            </a>
+            github: <a href="https://github.com/DimuthuAttanayake" target="_blank">Dimuthu Attanayake</a>
             <br>
-
             <i class="fas fa-envelope" aria-hidden="true"></i>
-            email:
-            <a href="mailto:dimuthuc.attanayake@gmail.com">
-                dimuthuc.attanayake@gmail.com
-            </a>
+            email: <a href="mailto:dimuthuc.attanayake@gmail.com">dimuthuc.attanayake@gmail.com</a>
         </p>
     </div>
 
-    <!-- ABOUT -->
-    <section>
-        <h2>
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-            Who am I?
-        </h2>
+    <!-- ABOUT SECTION -->
+    <section class="intro">
+        <h2>Who am I?</h2>
 
-        <img
-        id="headshot"
-        src="images/Dimuthu.jpg"
-        alt="Dimuthu Attanayake">
-                <p>
-                    Hi, my name is Dimuthu.
-                </p>
+        <div class="intro-grid">
+            <img id="headshot" src="images/Dimuthu.jpg" alt="Dimuthu Attanayake">
+            <p class="intro-text">
+                Hi, my name is Dimuthu. 
+            </p>
+        </div>
     </section>
 
-    <!-- DATA VIS -->
+    <!-- DATA VISUALIZATIONS -->
     <section>
-        <h2>
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-            Data Visualization
-        </h2>
+        <h2>Data Visualization</h2>
 
-        <div class="viz-embed">
-            <div
-                class="flourish-embed flourish-sankey"
-                data-src="visualisation/26812347"
-                aria-label="Sankey diagram showing polypropylene polymer trade through the Panama Canal">
-                <script src="https://public.flourish.studio/resources/embed.js"></script>
-                <noscript>
-                    <img
-                        src="https://public.flourish.studio/visualisation/26812347/thumbnail"
-                        alt="Sankey diagram of polypropylene polymer trade through the Panama Canal"
-                        width="100%"
-                    >
-                </noscript>
+        <div class="grid">
+            <div>
+                <h3>Polypropylene Trade via Panama Canal</h3>
+                <div class="flourish-embed flourish-sankey" data-src="visualisation/26812347"></div>
+            </div>
+
+            <div>
+                <h3>Another Visualization</h3>
+                <img src="images/placeholder.png" alt="Visualization preview">
             </div>
         </div>
     </section>
 
+    <script src="https://public.flourish.studio/resources/embed.js"></script>
+
     <!-- REPORTING -->
     <section>
-        <h2>
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-            Reporting
-        </h2>
+        <h2>Reporting</h2>
 
         <div class="grid">
-        <div class="card">
-            <h3>
-                <a href="https://pulitzercenter.org/stories/sri-lanka-climate-change-traps-women-farmers-exploitative-cycle-economic-violence"
-                   target="_blank">
-                    In Sri Lanka, Climate Change Traps Women Farmers in ‘Exploitative’ Cycle of Economic Violence
-                </a>
-            </h3>
+            <div>
+                <h3>
+                    <a href="https://pulitzercenter.org/stories/sri-lanka-climate-change-traps-women-farmers-exploitative-cycle-economic-violence"
+                       target="_blank">
+                        In Sri Lanka, Climate Change Traps Women Farmers in ‘Exploitative’ Cycle of Economic Violence
+                    </a>
+                </h3>
+                <img src="images/sri-lanka-climate.jpg" alt="Women farmers from the agricultural heartlands of Sri Lanka battling climate related debt ">
+            </div>
 
-            <img src="images/microfinanace.jpg"
-                 alt="Women farmers battling climate related debt in the agricultural heartlands of Sri Lanka">
+            <div>
+                <h3>
+                    <a href="#">Another Story</a>
+                </h3>
+                <img src="images/placeholder.png" alt="Story preview">
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <h3>
-                <a href="#" target="_blank"> Another Story Title</a>
-            </h3>
-
-            <img src="images/placeholder.png" alt="Story image">
-        </div>
-    </div>
-</section>
+    <!-- FOOTER -->
+    <footer>
+        &copy; 2026 Dimuthu Attanayake
+    </footer>
 
 </body>
 </html>
