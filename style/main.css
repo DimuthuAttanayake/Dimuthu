@@ -169,3 +169,13 @@ footer {
     outline: 2px solid rgba(0, 0, 0, 0.4);
     outline-offset: 4px;
 }
+
+/* Visualization thumbnail hover polish */
+.viz-card img {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.viz-card:hover img {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
