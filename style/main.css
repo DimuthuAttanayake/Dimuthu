@@ -179,3 +179,24 @@ footer {
     opacity: 0.85;
     transform: translateY(-2px);
 }
+/* Make visualization GIF behave like a proper thumbnail */
+.viz-card img {
+    width: 100%;
+    height: 260px;            /* controls how tall the thumbnail is */
+    object-fit: cover;        /* fills space without distortion */
+    object-position: center;  /* keeps focus centered */
+    display: block;
+    background-color: #000;   /* hides white edges if GIF is smaller */
+}
+
+/* Slight editorial hover polish */
+.viz-card:hover img {
+    transform: scale(1.02);
+}
+.viz-card {
+    padding: 0;
+}
+
+.viz-card h3 {
+    padding: 0.75rem 1rem;
+}
