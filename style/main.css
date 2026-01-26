@@ -314,3 +314,48 @@ footer {
     height: 100%;
     border: 0;
 }
+/* Grid container for both Reporting and Visualization */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center all cards */
+    gap: 1.5rem;
+}
+
+/* Cards inside the grid */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center content inside the card */
+    text-align: center;
+    max-width: 300px;
+}
+
+/* Images and GIFs inside cards */
+.card img,
+.viz-card iframe {
+    width: 100%;   /* fill the card width */
+    height: auto;  /* maintain aspect ratio */
+    border-radius: 4px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Optional: add some padding inside the card */
+.card h3 {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.card p {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Special styling for GIF/iframe in visualization to dominate */
+.viz-card {
+    max-width: 350px; /* bigger than reporting images */
+}
+
+.viz-card iframe {
+    width: 100%;
+    height: 200px; /* can adjust to taste */
