@@ -386,3 +386,28 @@ footer {
     margin-top: 0.5rem;
     text-align: center;
 }
+.viz-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 300px; /* adjust as needed */
+    height: 400px; /* total card height */
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.viz-card iframe,
+.viz-card img {
+    width: 100%;
+    height: 33%; /* now 1/3 of card height */
+    object-fit: cover;
+    border: none;
+}
+
+.viz-card h3 {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
