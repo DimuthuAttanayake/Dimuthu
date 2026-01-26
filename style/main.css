@@ -562,3 +562,17 @@ footer {
     align-items: stretch;
     text-align: left;
 }
+/* Visualization thumbnails — FINAL, unified behavior */
+.viz-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+}
+
+.viz-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
