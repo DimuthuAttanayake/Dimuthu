@@ -411,3 +411,28 @@ footer {
     margin-top: 0.5rem;
     font-size: 1rem;
 }
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card.viz-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px; /* same as reporting cards */
+    text-align: center;
+    padding: 0.5rem;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 5px;
+}
+
+.card.viz-card img {
+    width: 100%;
+    height: 33%; /* adjust height to 1/3 of the card */
+    object-fit: cover;
+    border-radius: 5px;
+}
