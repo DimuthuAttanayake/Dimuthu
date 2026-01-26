@@ -436,3 +436,42 @@ footer {
     object-fit: cover;
     border-radius: 5px;
 }
+
+/* Grid layout like reporting section */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Card styling */
+.card.viz-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px; /* same as reporting cards */
+    text-align: center;
+    padding: 0.5rem;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 5px;
+}
+
+/* Visualization animated embed */
+.viz-iframe {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* maintains 16:9 */
+    overflow: hidden;
+    background: #000; /* makes animation feel intentional */
+    border-radius: 5px;
+}
+
+.viz-iframe iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
