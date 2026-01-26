@@ -576,3 +576,9 @@ footer {
     object-fit: cover;
     display: block;
 }
+.viz-thumb {
+    width: 100%;
+    aspect-ratio: 4 / 3;   /* taller */
+    overflow: hidden;
+    background: #000;
+}
