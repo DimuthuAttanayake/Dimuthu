@@ -1,3 +1,7 @@
+/* ===============================
+   BASE
+================================ */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -9,34 +13,8 @@ html, body {
 
 .page-container {
     max-width: 1200px;
-    margin: 2rem auto;  /* centers page horizontally */
-    padding: 1.5rem;    /* spacing from edges */
-}
-
-h1 {
-    color: #804FB3;
-    text-align: left;  /* keep name left-aligned */
-    margin-bottom: 0.2rem;
-}
-
-h2 {
-    font-size: 20px;
-    margin-top: 2rem;
-    text-align: left; /* keep section headings left-aligned */
-}
-
-h3 {
-    font-size: 18px;
-    margin-top: 0.5rem;
-}
-
-#sub.socials-center {
-    text-align: left;  /* keep socials left-aligned like Rosemary */
-    margin-bottom: 2rem;
-}
-
-#sub p.role {
-    font-weight: bold;
+    margin: 2rem auto;
+    padding: 1.5rem;
 }
 
 a {
@@ -48,44 +26,91 @@ a:hover {
     color: #bca6cf;
 }
 
-/* WHO AM I */
+/* ===============================
+   TYPOGRAPHY
+================================ */
+
+h1 {
+    color: #804FB3;
+    margin-bottom: 0.2rem;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 0.75rem 1rem;
+}
+
+#sub.socials-center {
+    margin-bottom: 2rem;
+}
+
+#sub p.role {
+    font-weight: bold;
+}
+
+/* ===============================
+   INTRO SECTION
+================================ */
+
 .intro-editorial {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     align-items: flex-start;
-    justify-content: center; /* center portrait + text */
 }
 
 .portrait img {
     width: 250px;
-    height: auto;
     object-fit: cover;
     filter: contrast(0.9) brightness(0.95);
-    border-radius: 0; /* slightly imperfect */
 }
 
 .intro-text {
     max-width: 700px;
 }
 
-/* GRID CARDS */
+/* ===============================
+   GRID (Reporting + Visualization)
+================================ */
+
 .grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center; /* center cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
+/* ===============================
+   CARD (shared)
+================================ */
+
 .card {
-    display: block;
+    display: flex;
+    flex-direction: column;
     background: #fff;
     border-radius: 5px;
     overflow: hidden;
-    max-width: 400px;
-    text-align: left;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.card:focus-visible {
+    outline: 2px solid rgba(0,0,0,0.4);
+    outline-offset: 4px;
+}
+
+/* ===============================
+   REPORTING IMAGES
+================================ */
 
 .card img {
     width: 100%;
@@ -93,21 +118,39 @@ a:hover {
     display: block;
 }
 
-.card h3 {
-    padding: 0.5rem 1rem;
+/* ===============================
+   VISUALIZATION THUMBNAILS (FINAL)
+================================ */
+
+.viz-card {
+    align-items: stretch;
+    text-align: left;
 }
 
-.card p {
-    padding: 0 1rem 1rem 1rem;
-    color: #333;
-    font-size: 14px;
+/* THIS is the only thumbnail rule you need */
+.viz-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;     /* SAME as reporting */
+    overflow: hidden;
+    background: #000;
 }
 
-.viz-card h3 {
-    color: #333;
+.viz-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* fills, no scrollbars, no black bars */
+    display: block;
 }
 
-/* FOOTER */
+/* Slight hover polish, restrained */
+.viz-card:hover .viz-thumb img {
+    filter: brightness(0.95) contrast(1.05);
+}
+
+/* ===============================
+   FOOTER
+================================ */
+
 footer {
     margin-top: 3rem;
     text-align: center;
@@ -115,470 +158,16 @@ footer {
     color: #333;
 }
 
-/* RESPONSIVE */
+/* ===============================
+   RESPONSIVE
+================================ */
+
 @media (max-width: 900px) {
     .intro-editorial {
         flex-direction: column;
-        align-items: center;
     }
 
     .intro-text {
         max-width: 100%;
     }
-
-    .grid {
-        justify-content: center;
-    }
-}
-
-/* ---------- Interactive thumbnail behavior ---------- */
-
-.card {
-    position: relative;
-    display: block;
-    text-decoration: none;
-    color: inherit;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.card img {
-    display: block;
-    width: 100%;
-    height: auto;
-
-    transition:
-        filter 0.25s ease,
-        transform 0.25s ease;
-}
-
-/* Hover state */
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.card:hover img {
-    filter: brightness(0.95) contrast(1.05);
-}
-
-/* Keyboard accessibility */
-.card:focus-visible {
-    outline: 2px solid rgba(0, 0, 0, 0.4);
-    outline-offset: 4px;
-}
-
-/* Visualization thumbnail hover polish */
-.viz-card img {
-    transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.viz-card:hover img {
-    opacity: 0.85;
-    transform: translateY(-2px);
-}
-/* Make visualization GIF behave like a proper thumbnail */
-.viz-card img {
-    width: 100%;
-    height: 260px;            /* controls how tall the thumbnail is */
-    object-fit: cover;        /* fills space without distortion */
-    object-position: center;  /* keeps focus centered */
-    display: block;
-    background-color: #000;   /* hides white edges if GIF is smaller */
-}
-
-/* Slight editorial hover polish */
-.viz-card:hover img {
-    transform: scale(1.02);
-}
-.viz-card {
-    padding: 0;
-}
-
-.viz-card h3 {
-    padding: 0.75rem 1rem;
-}
-/* Animated visualization thumbnail */
-.viz-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-/* Visualization grid */
-.viz-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
-/* Card wrapper */
-.viz-card {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Media container — forces same size */
-.viz-media {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background: #f5f5f5;
-    margin-bottom: 0.75rem;
-}
-
-/* GIFs */
-.viz-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Title */
-.viz-card h3 {
-    font-size: 0.95rem;
-    line-height: 1.35;
-    font-weight: 500;
-}
-
-/* Subtle hover (keep documentary feel) */
-.viz-card:hover .viz-media {
-    filter: brightness(0.96);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .viz-grid {
-        grid-template-columns: 1fr;
-    }
-}
-/* Grid layout for visualizations (same as reporting) */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-/* Card styling */
-.card {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: inherit;
-}
-
-.card h3 {
-    margin: 0.5rem 0 0.25rem;
-    font-size: 1rem;
-}
-
-.viz-iframe,
-.viz-media {
-    width: 100%;
-    height: 200px;       /* Keep same as reporting cards */
-    overflow: hidden;
-    border-radius: 4px;  /* soft edges */
-}
-
-.viz-iframe iframe,
-.viz-media iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-}
-
-/* Hover effect like reporting section */
-.card:hover {
-    transform: translateY(-4px);
-    transition: transform 0.25s ease;
-}
-.viz-iframe,
-.viz-media {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.viz-iframe iframe,
-.viz-media iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-/* Grid container for both Reporting and Visualization */
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* center all cards */
-    gap: 1.5rem;
-}
-
-/* Cards inside the grid */
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* center content inside the card */
-    text-align: center;
-    max-width: 300px;
-}
-
-/* Images and GIFs inside cards */
-.card img,
-.viz-card iframe {
-    width: 100%;   /* fill the card width */
-    height: auto;  /* maintain aspect ratio */
-    border-radius: 4px;
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
-}
-
-/* Optional: add some padding inside the card */
-.card h3 {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-}
-
-.card p {
-    font-size: 0.85rem;
-    color: #555;
-}
-
-/* Special styling for GIF/iframe in visualization to dominate */
-.viz-card {
-    max-width: 350px; /* bigger than reporting images */
-}
-
-.viz-card iframe {
-    width: 100%;
-    height: 200px; /* can adjust to taste */
-
-    .grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.viz-card {
-    max-width: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem;
-}
-
-.viz-card iframe {
-    width: 100%;
-    height: 66%; /* GIF covers ~2/3 of the card */
-    border: none;
-    overflow: hidden; /* removes scrollbars */
-}
-
-.viz-card h3 {
-    margin-top: 0.5rem;
-    text-align: center;
-}
-.viz-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 300px; /* adjust as needed */
-    height: 400px; /* total card height */
-    border: 1px solid #eee;
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: #fff;
-}
-
-.viz-card iframe,
-.viz-card img {
-    width: 100%;
-    height: 33%; /* now 1/3 of card height */
-    object-fit: cover;
-    border: none;
-}
-
-.viz-card h3 {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-}
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.card.viz-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 400px; /* same as reporting cards */
-    text-align: center;
-    padding: 0.5rem;
-    box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
-    background: #fff;
-    border-radius: 5px;
-}
-
-.card.viz-card img {
-    width: 100%;
-    height: 33%; /* adjust height to 1/3 of the card */
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-/* Grid layout like reporting section */
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}
-
-/* Card styling */
-.card.viz-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 400px; /* same as reporting cards */
-    text-align: center;
-    padding: 0.5rem;
-    box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
-    background: #fff;
-    border-radius: 5px;
-}
-
-/* Visualization animated embed */
-.viz-iframe {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9; /* maintains 16:9 */
-    overflow: hidden;
-    background: #000; /* makes animation feel intentional */
-    border-radius: 5px;
-}
-
-.viz-iframe iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-/* Card grid layout */
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}
-
-/* Cards (reporting & visualization) */
-.card.viz-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 400px; /* same as reporting cards */
-    height: 300px; /* fixed card height */
-    text-align: center;
-    padding: 0.5rem;
-    box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
-    background: #fff;
-    border-radius: 5px;
-}
-
-/* GIF container fills 2/3 of card */
-.viz-iframe {
-    position: relative;
-    width: 100%;
-    height: 66%; /* 2/3 of card height */
-    overflow: hidden;
-    border-radius: 5px;
-}
-
-.viz-iframe iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-/* Visualization thumbnails */
-.viz-thumb {
-    width: 100%;
-    height: 220px;           /* GIF area height (dominant portion of card) */
-    overflow: hidden;
-    border-radius: 4px;
-}
-
-.viz-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;       /* GIF fills the space smoothly */
-    display: block;
-}
-
-/* Visualization thumbnails — unified sizing */
-.viz-thumb {
-    width: 100%;
-    aspect-ratio: 16 / 9;   /* same visual weight as reporting */
-    overflow: hidden;
-    background: #000;
-}
-
-.viz-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;     /* THIS makes them match */
-    display: block;
-}
-/* === Visualization thumbnails (match reporting) === */
-
-.viz-thumb {
-    width: 100%;
-    aspect-ratio: 16 / 9;   /* same visual weight as reporting images */
-    overflow: hidden;
-    border-radius: 4px;
-    background: #000;
-}
-
-.viz-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;     /* fills thumbnail, no stretching */
-    display: block;
-}
-
-/* Ensure visualization cards align like reporting */
-.card.viz-card {
-    align-items: stretch;
-    text-align: left;
-}
-/* Visualization thumbnails — FINAL, unified behavior */
-.viz-thumb {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background: #000;
-}
-
-.viz-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-.viz-thumb {
-    width: 100%;
-    aspect-ratio: 4 / 3;   /* taller */
-    overflow: hidden;
-    background: #000;
 }
