@@ -130,7 +130,7 @@ h3 {
 /* THIS is the only thumbnail rule you need */
 .viz-thumb {
     width: 100%;
-    aspect-ratio: 16 / 9;     /* SAME as reporting */
+    aspect-ratio: 4/3 ;     /* SAME as reporting */
     overflow: hidden;
     background: #000;
 }
